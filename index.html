@@ -20,7 +20,7 @@
 
     <script src="js/v.js"></script>
 
-    <title>Replicanti Incremental</title>
+    <title>Replicanti Incremental: Atomic</title>
 </head>
 <body onload="loadGame()">
     <div id='app'>
@@ -40,7 +40,7 @@
                         You have <b style="color: #ffaa2b;">{{ format(player.inf.points,0) }}</b> Infinity Points<br><br>
                         <button v-if="FORMS.inf.can()" class="btn inf" onclick="FORMS.inf.reset()">
                             <span v-if="player.chals.active.includes('inf')">Complete Infinity Challenge...</span>
-                            <span v-else>Gain <b>{{ format(FORMS.inf.gain(),0) }}</b> Infinity Points</span>
+                            <span v-else>Gain <b>{{ format(FORMS.inf.gain(),1e289) }}</b> Infinity Points</span>
                         </button>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                 <div v-if="player.tab[0] == 0">
                     <div v-if="player.tab[1] == 0">
                         <div v-if="FORMS.inf.reached()">
-                            <h3>Beyond Replicanti, Replicanti growth cannot go beyond Infinity...</h3><br><br>
+                            <h3>Beyond Replicanti, Replicanti growth can go beyond Infinity...</h3><br><br>
                             <button class='btn inf' onclick="FORMS.inf.reset()">
                                 Go Infinity, but resets all previous features except achievements for being Infinity.
                             </button>
