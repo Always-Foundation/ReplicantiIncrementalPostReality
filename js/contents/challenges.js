@@ -73,7 +73,7 @@ const CHALS = {
         },
     },
     inf: {
-        requires: [E('e1100'), E('e1350'), E('e2350'), E('e3800'), E('e10200'), E('e11300')],
+        requires: [E('e1'), E('e2'), E('e3'), E('e4'), E('e5'), E('e6')],
         canComplete() { return player.replicanti.gte(this[player.chals.active.split("inf")[1]].goal) },
         canUnlock() { return player.replicanti.gte(this.requires[player.chals.inf_unls]) },
         unlock() { if (this.canUnlock()) player.chals.inf_unls++ },
@@ -83,34 +83,34 @@ const CHALS = {
         },
         length: 6,
         1: {
-            goal: E('e480'),
+            goal: E('e1'),
             desc: "All previous challenges at once",
             reward: "All of the challenges completed boost Infinity Replicanti growth",
         },
         2: {
-            goal: E('e500'),
-            desc: "Replicant Galaxy is disabled, but you can sacrifice Replicanti",
+            goal: E('e2'),
+            desc: "Replicant Galaxy is enabled, but you cannot sacrifice Replicanti",
             reward: "Unlock Replicanti Sacrifice",
         },
         3: {
-            goal: E('e640'),
+            goal: E('e3'),
             desc: "Replicanti Penalty, Replicanti Slowdown is twice stronger",
             reward: "Replicanti Penalty is 25% weaker",
         },
         4: {
-            goal: E('e2300'),
+            goal: E('e4'),
             desc: "Infinity Replicanti effects are disabled",
             reward: "Infinity points gain is increased by 2x for every challenge completed, unlock Replicanti Sacrifice autobuyer",
         },
         5: {
-            goal: E('e4400'),
+            goal: E('e5'),
             desc: "Replicanti Sacrifice is disabled",
             reward: "Infinity points gain softcap is 50% weaker",
         },
         6: {
-            goal: E('e1400'),
-            desc: "You cannot buy Prestige upgrades except 1 and 2 row",
-            reward: "Prestige points gain softcap is sightly weaker",
+            goal: E('e6'),
+            desc: "You can buy Prestige upgrades except 1 and 2 row",
+            reward: "Prestige points gain softcap is not sightly weaker",
         },
     },
 }
